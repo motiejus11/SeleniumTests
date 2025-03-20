@@ -10,6 +10,11 @@ const assert = require('assert');
 
 
 describe('should add new todo tests', function() {
+
+    after(async function() {
+        await driver.quit();
+    })
+    
     it('should add a new to do', async function() {
         //atsidaryti narsykle
         driver = await new Builder().forBrowser('chrome').build();
@@ -32,7 +37,7 @@ describe('should add new todo tests', function() {
         //cy.get('.elementas').contains('kazkoks tai tekstas')
         const addedTodoItem = await driver.findElement(By.xpath("//label[text()='Buy groceries']")).getText(); //Buy groceries
         // addedTodoItem == 'Buy groceries'
-        assert.strictEqual(addedTodoItem, 'Buy groceriessssss', 'To do items not equals')
+        assert.strictEqual(addedTodoItem, 'Buy groceriess', 'To do items not equals')
         // /html/body/ng-view/section/section/ul/li[1]/div/label
         
         // Chai
@@ -40,8 +45,5 @@ describe('should add new todo tests', function() {
         
         console.log(addedTodoItem);
 
-        //uzdaryti narsykle
-        // await driver.sleep(10000);
-        await driver.quit();
     });
 });
