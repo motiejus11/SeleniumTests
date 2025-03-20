@@ -37,13 +37,13 @@ describe('should add new todo tests', function() {
         //cy.get('.elementas').contains('kazkoks tai tekstas')
         const addedTodoItem = await driver.findElement(By.xpath("//label[text()='Buy groceries']")).getText(); //Buy groceries
         // addedTodoItem == 'Buy groceries'
-        assert.strictEqual(addedTodoItem, 'Buy groceriess', 'To do items not equals')
+        assert.strictEqual(addedTodoItem, 'Buy groceries', 'To do items not equals')
         // /html/body/ng-view/section/section/ul/li[1]/div/label
         
         // Chai
         // addedTodoItem.should.equal('Buy groceries');
         
         console.log(addedTodoItem);
-
+        
     });
 });
